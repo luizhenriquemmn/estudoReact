@@ -3,15 +3,15 @@ import './Comentario.css'
 
 
 //JSX
-const Comentario = a => {
+const Comentario = props => {
  
  return   <div className='Comentario'>
-    <p>{a.nome}</p>
-    <p>{a.email}</p>
+    <p>{props.nome}</p>
+    <p>{props.email}</p>
     
-    <p>{a.data.toString()}</p>
-    <p><i>{a.children}</i></p>
-
+    <p>{props.data.toString()}</p>
+    <p><i>{props.children}</i></p>
+    <button onClick={props.onRemove}>&times;</button>
     </div>
 };
 
