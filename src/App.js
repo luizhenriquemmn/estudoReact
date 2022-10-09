@@ -9,13 +9,13 @@ class App extends Component{
       {
         nome: 'João',
         email: 'joao@gmail.com',
-        data: new Date(2022, 10, 10),
+        data: new Date(2022, 9, 9 , 10, 10, 20),
         mensagem: 'Olá, Tudo Bem?'
       },
       {
         nome: 'Maria',
         email: 'maria@gmail.com',
-        data: new Date(2022, 10, 10),
+        data: new Date(2022, 9, 9 ,7, 10, 20),
         mensagem: 'Olá, tudo bem sim.'
       }   
     ],
@@ -70,14 +70,27 @@ class App extends Component{
           ))
         }
 
-        <form method="post" onSubmit={this.adicionarComentario}>
+        <form className='Novo-Comentario' method="post" onSubmit={this.adicionarComentario}>
           <h2>Adicionar Comentario</h2>
           <div>
-            <input  type="text" name ="nome" value = {this.state.novoComentario.nome} onChange={this.digitacao} placeholder='Digite seu Nome'/>
+            <input  
+                type="text" 
+                name ="nome" 
+                value = {this.state.novoComentario.nome} 
+                onChange={this.digitacao} 
+                required
+                placeholder='Digite seu Nome'
+            />
           </div>
           <div>
             <input 
-              type="email" name ="email" value ={this.state.novoComentario.email} onChange={this.digitacao} placeholder='Digite seu email' />
+              type="email" 
+              name ="email" 
+              value ={this.state.novoComentario.email} 
+              onChange={this.digitacao} 
+              required
+              placeholder='Digite seu email' 
+            />
           </div>
           <div>
             <textarea 
@@ -85,9 +98,9 @@ class App extends Component{
               rows="4"
               value = {this.state.novoComentario.mensagem}
               onChange={this.digitacao}
+              required
             />
-
-            <button type="submit" >Adicionar Comentário</button>
+            <p><button type="submit" >Adicionar Comentário</button></p>
           </div>
 
         </form>
