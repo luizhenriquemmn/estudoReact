@@ -30,3 +30,4 @@ const functionReduce = produtos.reduce((a,b)=>{
     return (a + b.preco);
 },0)
 console.log(functionReduce)
+console.log("test")
